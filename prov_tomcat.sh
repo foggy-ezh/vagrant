@@ -1,5 +1,7 @@
 #!/bin/bash
 sudo -su root
+um install -y vim net-tools
+
 if [ ! -d /apps/tomcat ]; then
 	mkdir -p /apps/tomcat
 fi
