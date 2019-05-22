@@ -38,6 +38,6 @@ EOT
 fi
 systemctl daemon-reload
 chmod +x /apps/tomcat/apache-tomcat-8.5.9/bin/*.sh
-cp /vagrant/clusterjsp.war /apps/tomcat/apache-tomcat-8.5.9/
+cp /vagrant/clusterjsp.war /apps/tomcat/apache-tomcat-8.5.9/webapps/
 systemctl enable tomcat
 systemctl start tomcat
