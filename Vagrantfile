@@ -4,10 +4,10 @@ Vagrant.configure("2") do |config|
 		config.vm.define "tomcat-#{i}" do |node|
 			node.vm.box = "#{box}"
 			node.vm.hostname = "tomcat-#{i}"
-			node.vm.network "private_network", ip: "192.168.56.#{i+1}"
-			node.vm.provision "shell", :path => "prov_tomcat.sh", :args => "#{i+1}"
+			node.vm.network "private_network", ip: "192.168.56.#{i+5}"
+			node.vm.provision "shell", :path => "prov_tomcat.sh", :args => "#{i+5}"
 			node.vm.provider :virtualbox do |v|
-				v.memory = 1024
+				v.memory = 2048
 			end
 		end	
 	end
@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 	config.vm.define "lb" do |node|
 		node.vm.box = "#{box}"
 		node.vm.hostname = "lb"
-		node.vm.network "private_network", ip: "192.168.56.101"
+		node.vm.network "private_network", ip: "192.168.56.105"
         	node.vm.provider :virtualbox do |v|
 			v.memory = 1024
 		 node.vm.provision "shell", path: "prov_apache.sh"
